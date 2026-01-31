@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vakit Plus - Prayer Times & Qibla</title>
+    <title>Vakit Plus - Privacy & Support</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -25,7 +25,7 @@
         header {
             background-color: var(--primary);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
             border-bottom: 4px solid var(--secondary);
         }
@@ -64,15 +64,32 @@
             margin-top: 1rem;
         }
 
-        .privacy-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #ddd;
+        .lang-switcher {
+            margin: 2rem 0;
+            text-align: right;
+        }
+
+        select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--secondary);
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            background: white;
+        }
+
+        .privacy-content {
+            display: none;
+        }
+
+        .privacy-content.active {
+            display: block;
         }
 
         .lang-block {
             margin-bottom: 2rem;
-            padding: 1rem;
+            padding: 1.5rem;
             background: #fafafa;
             border-left: 4px solid var(--secondary);
         }
@@ -82,6 +99,17 @@
             padding: 2rem;
             font-size: 0.9rem;
             color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
         }
     </style>
 </head>
@@ -96,66 +124,146 @@
     <div class="container">
         <section>
             <h2>Support & Contact</h2>
-            <p>If you have any questions, feedback, or need assistance with Vakit Plus, please feel free to contact us
-                at <strong>vakitplus@gmail.com</strong>.</p>
+            <p>If you have any questions, feedback, or need assistance, please contact us at
+                <strong>vakitplus@gmail.com</strong>.</p>
             <div class="contact-box">
                 <a href="mailto:vakitplus@gmail.com" class="btn">Contact Support</a>
             </div>
         </section>
 
         <section class="privacy-section">
+            <div class="lang-switcher">
+                <label for="langSelect">Select Language: </label>
+                <select id="langSelect" onchange="switchLang(this.value)">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="ar">العربية</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ru">Русский</option>
+                    <option value="ur">اردو</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="bn">বাংলা</option>
+                </select>
+            </div>
+
             <h2>Privacy Policy</h2>
             <p><em>Last Updated: January 2026</em></p>
 
-            <div class="lang-block">
-                <h3>🇺🇸 English</h3>
-                <p><strong>Privacy Policy</strong><br>
-                    Vakit Plus respects your privacy. This Privacy Policy explains how we collect, use, and safeguard
+            <!-- English -->
+            <div id="en" class="privacy-content active lang-block">
+                <h3>English</h3>
+                <p>Vakit Plus respects your privacy. This Privacy Policy explains how we collect, use, and safeguard
                     your information when you use our mobile application.</p>
-                <p><strong>Information We Collect</strong><br>
-                    We do not collect any personal data that identifies you directly. We may collect:<br>
-                    - <strong>Location Data:</strong> To calculate accurate prayer times and Qibla direction. This data
-                    is processed locally on your device and is not stored on our servers.<br>
-                    - <strong>Usage Data:</strong> Anonymous analytics to help us improve the app performance and user
-                    experience.</p>
-                <p><strong>How We Use Your Information</strong><br>
-                    We use the information solely to provide the core functionality of the app, such as displaying
-                    prayer times for your location and showing the Qibla direction.</p>
-                <p><strong>Third-Party Services</strong><br>
-                    We may use third-party services for analytics or advertising (e.g., AdMob). These services may
-                    collect information used to identify you.</p>
-                <p><strong>Security</strong><br>
-                    We strive to use commercially acceptable means to protect your information. However, no method of
-                    transmission over the internet or electronic storage is 100% secure.</p>
+                <p><strong>Information We Collect:</strong> We do not collect any personal data that identifies you
+                    directly. We may collect location data to calculate accurate prayer times (processed locally, not
+                    stored) and anonymous usage data to improve performance.</p>
+                <p><strong>Contact:</strong> vakitplus@gmail.com</p>
             </div>
 
-            <div class="lang-block">
-                <h3>🇹🇷 Türkçe</h3>
-                <p><strong>Gizlilik Politikası</strong><br>
-                    Vakit Plus gizliliğinize saygı duyar. Bu Gizlilik Politikası, uygulamamızı kullandığınızda
+            <!-- Turkish -->
+            <div id="tr" class="privacy-content lang-block">
+                <h3>Türkçe (Turkish)</h3>
+                <p>Vakit Plus gizliliğinize saygı duyar. Bu Gizlilik Politikası, uygulamamızı kullandığınızda
                     bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.</p>
-                <p><strong>Topladığımız Bilgiler</strong><br>
-                    Sizi doğrudan tanımlayan hiçbir kişisel veri toplamıyoruz. Şunları toplayabiliriz:<br>
-                    - <strong>Konum Verileri:</strong> Namaz vakitlerini ve Kıble yönünü doğru hesaplamak için. Bu
-                    veriler cihazınızda yerel olarak işlenir ve sunucularımızda saklanmaz.<br>
-                    - <strong>Kullanım Verileri:</strong> Uygulama performansını ve kullanıcı deneyimini iyileştirmemize
-                    yardımcı olacak anonim analizler.</p>
-                <p><strong>Bilgilerinizi Nasıl Kullanıyoruz</strong><br>
-                    Bilgileri yalnızca, bulunduğunuz yerin namaz vakitlerini görüntülemek ve Kıble yönünü göstermek gibi
-                    uygulamanın temel işlevlerini sağlamak için kullanırız.</p>
-                <p><strong>Üçüncü Taraf Hizmetleri</strong><br>
-                    Analiz veya reklam (ör. AdMob) için üçüncü taraf hizmetleri kullanabiliriz. Bu hizmetler sizi
-                    tanımlamak için kullanılan bilgileri toplayabilir.</p>
-                <p><strong>Güvenlik</strong><br>
-                    Bilgilerinizi korumak için ticari olarak kabul edilebilir yöntemleri kullanmaya çalışıyoruz. Ancak
-                    internet üzerinden hiçbir iletim yöntemi %100 güvenli değildir.</p>
+                <p><strong>Topladığımız Bilgiler:</strong> Sizi doğrudan tanımlayan hiçbir kişisel veri toplamıyoruz.
+                    Namaz vakitlerini hesaplamak için konum verileri (yerel olarak işlenir, saklanmaz) ve performans
+                    iyileştirme için anonim kullanım verileri toplanabilir.</p>
+                <p><strong>İletişim:</strong> vakitplus@gmail.com</p>
             </div>
+
+            <!-- Arabic -->
+            <div id="ar" class="privacy-content lang-block" dir="rtl">
+                <h3>العربية (Arabic)</h3>
+                <p>وقت بلس يحترم خصوصيتك. توضح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند استخدام
+                    تطبيقنا.</p>
+                <p><strong>المعلومات التي نجمعها:</strong> نحن لا نجمع أي بيانات شخصية تحدد هويتك بشكل مباشر. قد نجمع
+                    بيانات الموقع لحساب أوقات الصلاة (تتم معالجتها محلياً ولا تخزن) وبيانات استخدام مجهولة لتحسين
+                    الأداء.</p>
+                <p><strong>اتصل بنا:</strong> vakitplus@gmail.com</p>
+            </div>
+
+            <!-- Indonesian -->
+            <div id="id" class="privacy-content lang-block">
+                <h3>Bahasa Indonesia (Indonesian)</h3>
+                <p>Vakit Plus menghormati privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan,
+                    menggunakan, dan melindungi informasi Anda saat Anda menggunakan aplikasi kami.</p>
+                <p><strong>Informasi yang Kami Kumpulkan:</strong> Kami tidak mengumpulkan data pribadi apa pun yang
+                    mengidentifikasi Anda secara langsung. Kami mungkin mengumpulkan data lokasi untuk menghitung waktu
+                    sholat (diproses secara lokal, tidak disimpan) dan data penggunaan anonim.</p>
+            </div>
+
+            <!-- French -->
+            <div id="fr" class="privacy-content lang-block">
+                <h3>Français (French)</h3>
+                <p>Vakit Plus respecte votre vie privée. Cette politique de confidentialité explique comment nous
+                    collectons, utilisons et protégeons vos informations.</p>
+                <p><strong>Informations collectées :</strong> Nous ne collectons aucune donnée personnelle vous
+                    identifiant directement. Les données de localisation sont traitées localement.</p>
+            </div>
+
+            <!-- German -->
+            <div id="de" class="privacy-content lang-block">
+                <h3>Deutsch (German)</h3>
+                <p>Vakit Plus respektiert Ihre Privatsphäre. Diese Datenschutzrichtlinie erklärt, wie wir Ihre
+                    Informationen sammeln, verwenden und schützen.</p>
+                <p><strong>Gesammelte Informationen:</strong> Wir sammeln keine personenbezogenen Daten, die Sie direkt
+                    identifizieren. Standortdaten werden lokal verarbeitet.</p>
+            </div>
+
+            <!-- Russian -->
+            <div id="ru" class="privacy-content lang-block">
+                <h3>Русский (Russian)</h3>
+                <p>Vakit Plus уважает вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы
+                    собираем и защищаем вашу информацию.</p>
+                <p><strong>Собираемая информация:</strong> Мы не собираем личные данные, которые идентифицируют вас
+                    напрямую. Данные о местоположении обрабатываются локально.</p>
+            </div>
+
+            <!-- Urdu -->
+            <div id="ur" class="privacy-content lang-block" dir="rtl">
+                <h3>اردو (Urdu)</h3>
+                <p>وقت پلس آپ کی رازداری کا احترام کرتا ہے۔ یہ رازداری کی پالیسی وضاحت کرتی ہے کہ ہم آپ کی معلومات کو کس
+                    طرح محفوظ کرتے ہیں۔</p>
+                <p><strong>معلومات جو ہم جمع کرتے ہیں:</strong> ہم کوئی ذاتی ڈیٹا جمع نہیں کرتے جو آپ کی براہ راست شناخت
+                    کر سکے۔ مقام کا ڈیٹا مقامی طور پر پروسیس کیا جاتا ہے ۔</p>
+            </div>
+
+            <!-- Hindi -->
+            <div id="hi" class="privacy-content lang-block">
+                <h3>हिन्दी (Hindi)</h3>
+                <p>Vakit Plus आपकी गोपनीयता का सम्मान करता है। यह गोपनीयता नीति बताती है कि हम आपकी जानकारी कैसे
+                    सुरक्षित करते हैं।</p>
+                <p><strong>जानकारी जो हम एकत्र करते हैं:</strong> हम कोई व्यक्तिगत डेटा एकत्र नहीं करते हैं। स्थान डेटा
+                    स्थानीय रूप से संसाधित किया जाता है।</p>
+            </div>
+
+            <!-- Bengali -->
+            <div id="bn" class="privacy-content lang-block">
+                <h3>বাংলা (Bengali)</h3>
+                <p>Vakit Plus আপনার গোপনীয়তাকে সম্মান করে। এই গোপনীয়তা নীতি আমরা আপনার তথ্য কীভাবে সুরক্ষিত রাখি তা
+                    ব্যাখ্যা করে।</p>
+                <p><strong>তথ্য যা আমরা সংগ্রহ করি:</strong> আমরা সরাসরি আপনাকে শনাক্ত করে এমন কোনো ব্যক্তিগত তথ্য
+                    সংগ্রহ করি না।</p>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #888;">Detailed policy for each language is available within the
+                application settings.</p>
         </section>
     </div>
 
     <footer>
         &copy; 2026 Vakit Plus. All rights reserved.
     </footer>
+
+    <script>
+        function switchLang(langId) {
+            const contents = document.querySelectorAll('.privacy-content');
+            contents.forEach(c => c.classList.remove('active'));
+            document.getElementById(langId).classList.add('active');
+        }
+    </script>
 
 </body>
 
