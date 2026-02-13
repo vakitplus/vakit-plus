@@ -5,54 +5,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waqt Plus - Privacy Policy & Support</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --primary: #0E5A3A;
-            --secondary: #C9A24D;
-            --bg: #F6F5F1;
-            --text: #1C1C1C;
+            --primary: #10b981;
+            --primary-dark: #064e3b;
+            --accent: #C9A24D;
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --card-bg: #1e293b;
+                --text: #f1f5f9;
+                --text-muted: #94a3b8;
+                --border: #334155;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            margin: 0;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
-            scroll-behavior: smooth;
+            transition: background-color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
         header {
-            background-color: var(--primary);
-            color: white;
-            padding: 4rem 1rem;
             text-align: center;
-            border-bottom: 4px solid var(--secondary);
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #064e3b 100%);
+            color: white;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .nav-links {
-            background: white;
+            background: var(--card-bg);
             padding: 1rem;
             position: sticky;
             top: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             text-align: center;
             z-index: 100;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+            border-bottom: 1px solid var(--border);
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--primary);
+            color: var(--text);
             font-size: 0.85rem;
             font-weight: 600;
-            padding: 6px 12px;
-            border: 1px solid #eee;
-            border-radius: 6px;
+            padding: 8px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 50px;
             transition: all 0.2s;
         }
 
@@ -60,43 +127,54 @@
             background: var(--primary);
             color: white;
             border-color: var(--primary);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
+            transform: translateY(-2px);
         }
 
         .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            margin-bottom: 3rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
         }
 
-        h1,
-        h2,
-        h3 {
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
             color: var(--primary);
-            margin-top: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            margin: 30px 0 15px;
+            font-size: 1.4rem;
+            color: var(--primary);
         }
 
         h4 {
-            color: #333;
-            margin-top: 1.5rem;
-            border-left: 4px solid var(--secondary);
-            padding-left: 10px;
+            margin: 20px 0 10px;
+            font-size: 1.1rem;
+            color: var(--text);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
         }
 
         .contact-box {
-            background: #EFE9DD;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-top: 1.5rem;
-            text-align: center;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.05) 100%);
             border: 1px dashed var(--primary);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
         }
 
         .btn {
@@ -105,49 +183,69 @@
             background-color: var(--primary);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            margin-top: 15px;
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
         }
 
         .btn:hover {
-            background-color: #0b4a30;
-        }
-
-        .lang-section {
-            border-top: 1px solid #eee;
-            padding-top: 3rem;
-            margin-top: 3rem;
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
         footer {
             text-align: center;
-            padding: 4rem;
-            font-size: 0.95rem;
-            color: #777;
-            background: #fff;
-            border-top: 1px solid #eee;
-        }
-
-        p,
-        li {
-            color: #444;
-            font-size: 1.05rem;
-        }
-
-        [dir="rtl"] {
-            text-align: right;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         .badge {
             display: inline-block;
             padding: 4px 12px;
             border-radius: 20px;
-            background: #e8f5e9;
-            color: #2e7d32;
-            font-size: 0.8rem;
-            font-weight: bold;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             margin-bottom: 10px;
+        }
+
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] h4 {
+            border-left: none;
+            border-right: 4px solid var(--accent);
+            padding-left: 0;
+            padding-right: 12px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -155,6 +253,7 @@
 <body>
 
     <header>
+        <div class="logo-placeholder">🕋</div>
         <h1>Waqt Plus (Vakit Plus)</h1>
         <p>Premium Spiritual Companion for the Global Ummah</p>
     </header>
@@ -171,151 +270,124 @@
     </div>
 
     <div class="container">
-        <div id="support" class="card">
-            <span class="badge">GET IN TOUCH</span>
+        <section id="support" class="card">
+            <span class="badge">Get in Touch</span>
             <h2>Support & Contact</h2>
             <div class="contact-box">
-                <p><strong>Official Support Email:</strong><br><span
-                        style="font-size: 1.2rem; color: var(--primary);">vakitplus@gmail.com</span></p>
+                <p><strong>Official Support Email:</strong></p>
+                <p style="font-size: 1.4rem; color: var(--primary); font-weight: 700;">vakitplus@gmail.com</p>
                 <a href="mailto:vakitplus@gmail.com" class="btn">Send Support Request</a>
             </div>
-        </div>
+        </section>
 
         <!-- English -->
-        <div id="en" class="card">
-            <span class="badge">PRIVACY POLICY</span>
+        <section id="en" class="card">
+            <span class="badge">Privacy Policy</span>
             <h3>🇺🇸 English - Waqt Plus</h3>
-            <div class="policy-content">
-                <p><strong>Effective Date:</strong> February 1, 2026</p>
-                <p>Waqt Plus built the Waqt Plus app as a Free app. This SERVICE is provided by Waqt Plus at no cost and
-                    is intended for use as is.</p>
-                <h4>1. Information Collection and Use</h4>
-                <p>To provide accurate prayer times and Qibla direction, the app requires access to your device's
-                    location. This data is processed <strong>locally on your device</strong>. We do not store or
-                    transmit your precise location to our servers.</p>
-                <h4>2. Third-Party Services</h4>
-                <p>The app does use third-party services that may collect information used to identify you (e.g., AdMob,
-                    Google Play Services).</p>
-                <h4>3. Security</h4>
-                <p>We value your trust in providing us your Personal Information, thus we are striving to use
-                    commercially acceptable means of protecting it.</p>
-                <p>Contact: <strong>vakitplus@gmail.com</strong></p>
-            </div>
-        </div>
+            <p><strong>Effective Date:</strong> February 1, 2026</p>
+            <p>Waqt Plus built the Waqt Plus app as a Free app. This SERVICE is provided by Waqt Plus at no cost and is
+                intended for use as is.</p>
+
+            <h4>1. Information Collection and Use</h4>
+            <p>To provide accurate prayer times and Qibla direction, the app requires access to your device's location.
+                This data is processed <strong>locally on your device</strong>. We do not store or transmit your precise
+                location to our servers.</p>
+
+            <h4>2. Third-Party Services</h4>
+            <p>The app does use third-party services that may collect information used to identify you (e.g., AdMob,
+                Google Play Services).</p>
+
+            <h4>3. Content Rights</h4>
+            <p>All software, design elements, and original graphical assets within the Waqt Plus application are the
+                intellectual property of Waqt Plus. Prayer time calculations are based on globally recognized
+                astronomical methods provided for public service.</p>
+        </section>
 
         <!-- Turkish -->
-        <div id="tr" class="card">
-            <span class="badge">GİZLİLİK POLİTİKASI</span>
+        <section id="tr" class="card">
+            <span class="badge">Gizlilik Politikası</span>
             <h3>🇹🇷 Türkçe - Vakit Plus</h3>
-            <div class="policy-content">
-                <p><strong>Yürürlük Tarihi:</strong> 1 Şubat 2026</p>
-                <p>Vakit Plus, Vakit Plus uygulamasını Ücretsiz bir uygulama olarak oluşturmuştur. Bu HİZMET, Vakit Plus
-                    tarafından ücretsiz olarak sağlanmaktadır.</p>
-                <h4>1. Bilgi Toplama ve Kullanımı</h4>
-                <p>Namaz vakitlerini ve Kıble yönünü doğru hesaplamak için cihazınızın GPS alıcısına ihtiyaç duyarız. Bu
-                    hesaplama tamamen <strong>cihazınızda (yerel)</strong> yapılır. Konum geçmişiniz sunucularımıza
-                    gönderilmez.</p>
-                <h4>2. Üçüncü Taraf Hizmetleri</h4>
-                <p>Uygulama, reklam gösterimi için Google AdMob gibi anonim teknik veri toplayabilen üçüncü taraf
-                    hizmetleri kullanmaktadır.</p>
-                <h4>3. Güvenlik</h4>
-                <p>Kişisel verilerinizin korunması bizim için önemlidir. Bilgilerinizi korumak için ticari olarak kabul
-                    edilebilir yöntemleri kullanmaktayız.</p>
-                <p>İletişim: <strong>vakitplus@gmail.com</strong></p>
-            </div>
-        </div>
+            <p><strong>Yürürlük Tarihi:</strong> 1 Şubat 2026</p>
+            <p>Vakit Plus, Vakit Plus uygulamasını Ücretsiz bir uygulama olarak oluşturmuştur. Bu HİZMET, Vakit Plus
+                tarafından ücretsiz olarak sağlanmaktadır.</p>
+
+            <h4>1. Bilgi Toplama ve Kullanımı</h4>
+            <p>Namaz vakitlerini ve Kıble yönünü doğru hesaplamak için cihazınızın GPS alıcısına ihtiyaç duyarız. Bu
+                hesaplama tamamen <strong>cihazınızda (yerel)</strong> yapılır. Konum geçmişiniz sunucularımıza
+                gönderilmez veya saklanmaz.</p>
+
+            <h4>2. Üçüncü Taraf Hizmetleri</h4>
+            <p>Uygulama, reklam gösterimi için Google AdMob gibi anonim teknik veri toplayabilen üçüncü taraf hizmetleri
+                kullanmaktadır.</p>
+
+            <h4>3. İçerik Hakları</h4>
+            <p>Vakit Plus uygulaması içindeki tüm yazılım, tasarım öğeleri ve özgün grafiksel varlıklar Vakit Plus'ın
+                fikri mülkiyetindedir.</p>
+        </section>
 
         <!-- Arabic -->
-        <div id="ar" class="card" dir="rtl">
+        <section id="ar" class="card" dir="rtl">
             <span class="badge">سياسة الخصوصية</span>
-            <h3>�� العربية - Waqt Plus</h3>
-            <div class="policy-content">
-                <p><strong>تاريخ السريان:</strong> 1 فبراير 2026</p>
-                <p>قامت Waqt Plus ببناء تطبيق Waqt Plus كخدمة مجانية.</p>
-                <h4>1. جمع المعلومات واستخدامها</h4>
-                <p>لتوفير مواقيت دقيقة للصلاة واتجاه القبلة، يتطلب التطبيق الوصول إلى موقع جهازك. تتم معالجة هذه
-                    البيانات <strong>محلياً على جهازك</strong>. نحن لا نخزن أو ننقل موقعك الدقيق إلى خوادمنا.</p>
-                <h4>2. خدمات الطرف الثالث</h4>
-                <p>يستخدم التطبيق خدمات طرف ثالث قد تجمع معلومات لتحديد هويتك (مثل AdMob).</p>
-                <h4>3. الأمان</h4>
-                <p>نحن نسعى جاهدين لحماية معلوماتك الشخصية باستخدام وسائل مقبولة تجارياً.</p>
-                <p>للتواصل: <strong>vakitplus@gmail.com</strong></p>
-            </div>
-        </div>
+            <h3>العربية - Waqt Plus</h3>
+            <p><strong>تاريخ السريان:</strong> 1 فبراير 2026</p>
+            <p>قامت Waqt Plus ببناء تطبيق Waqt Plus كخدمة مجانية.</p>
+
+            <h4>1. جمع المعلومات واستخدامها</h4>
+            <p>لتوفير مواقيت دقيقة للصلاة واتجاه القبلة، يتطلب التطبيق الوصول إلى موقع جهازك. تتم معالجة هذه البيانات
+                محلياً على جهازك. نحن لا نخزن أو ننقل موقعك الدقيق إلى خوادمنا.</p>
+
+            <h4>2. خدمات الطرف الثالث</h4>
+            <p>يستخدم التطبيق خدمات طرف ثالث قد تجمع معلومات لتحديد هويتك (مثل AdMob).</p>
+        </section>
 
         <!-- Indonesian -->
-        <div id="id" class="card">
-            <span class="badge">KEBIJAKAN PRIVASI</span>
+        <section id="id" class="card">
+            <span class="badge">Kebijakan Privasi</span>
             <h3>🇮🇩 Bahasa Indonesia - Waqt Plus</h3>
-            <div class="policy-content">
-                <p><strong>Tanggal Efektif:</strong> 1 Februari 2026</p>
-                <p>Waqt Plus membangun aplikasi Waqt Plus sebagai layanan Gratis.</p>
-                <h4>1. Pengumpulan dan Penggunaan Informasi</h4>
-                <p>Untuk memberikan waktu sholat dan arah Kiblat yang akurat, aplikasi memerlukan akses ke lokasi
-                    perangkat Anda. Data ini diproses <strong>secara lokal di perangkat Anda</strong>.</p>
-                <h4>2. Layanan Pihak Ketiga</h4>
-                <p>Aplikasi ini menggunakan layanan pihak ketiga yang mungkin mengumpulkan informasi (seperti AdMob).
-                </p>
-                <h4>3. Keamanan</h4>
-                <p>Kami menghargai kepercayaan Anda dalam memberikan Informasi Pribadi Anda kepada kami.</p>
-                <p>Kontak: <strong>vakitplus@gmail.com</strong></p>
-            </div>
-        </div>
+            <p><strong>Tanggal Efektif:</strong> 1 Februari 2026</p>
+            <p>Waqt Plus membangun aplikasi Waqt Plus sebagai layanan Gratis.</p>
+
+            <h4>1. Pengumpulan dan Penggunaan Informasi</h4>
+            <p>Untuk memberikan waktu sholat dan arah Kiblat yang akurat, uygulama memerlukan akses ke lokasi cihaz
+                Anda.</p>
+
+            <h4>2. Layanan Pihak Ketiga</h4>
+            <p>Aplikasi ini menggunakan layanan pihak ketiga yang mungkin mengumpulkan informasi (seperti AdMob).</p>
+        </section>
 
         <!-- French -->
-        <div id="fr" class="card">
-            <span class="badge">POLITIQUE DE CONFIDENTIALITÉ</span>
+        <section id="fr" class="card">
+            <span class="badge">Politique de Confidentialité</span>
             <h3>🇫🇷 Français - Waqt Plus</h3>
-            <div class="policy-content">
-                <p><strong>Date d'effet :</strong> 1 février 2026</p>
-                <p>Waqt Plus a créé l'application Waqt Plus en tant qu'application gratuite.</p>
-                <h4>1. Collecte et utilisation des informations</h4>
-                <p>Pour fournir des heures de prière et une direction de la Qibla précises, l'application nécessite
-                    l'accès à la localisation de votre appareil. Ces données sont traitées <strong>localement sur votre
-                        appareil</strong>.</p>
-                <h4>2. Services tiers</h4>
-                <p>L'application utilise des services tiers qui peuvent collecter des informations (par ex. AdMob).</p>
-                <p>Contact : <strong>vakitplus@gmail.com</strong></p>
-            </div>
-        </div>
+            <p><strong>Date d'effet :</strong> 1 février 2026</p>
+            <p>Waqt Plus a créé l'application Waqt Plus en tant qu'application gratuite.</p>
+
+            <h4>1. Collecte et utilisation des informations</h4>
+            <p>Pour fournir des heures de prière et une direction de la Qibla précises, l'application nécessite l'accès
+                à la localisation de votre appareil.</p>
+        </section>
 
         <!-- German -->
-        <div id="de" class="card">
-            <span class="badge">DATENSCHUTZERKLÄRUNG</span>
+        <section id="de" class="card">
+            <span class="badge">Datenschutzerklärung</span>
             <h3>🇩🇪 Deutsch - Waqt Plus</h3>
-            <div class="policy-content">
-                <p><strong>Gültig ab:</strong> 1. Februar 2026</p>
-                <p>Waqt Plus hat die Waqt Plus-App als kostenlose App erstellt.</p>
-                <h4>1. Datenerhebung und Verwendung</h4>
-                <p>Um genaue Gebetszeiten und die Qibla-Richtung bereitzustellen, benötigt die App Zugriff auf den
-                    Standort Ihres Geräts. Diese Daten werden <strong>lokal auf Ihrem Gerät</strong> verarbeitet.</p>
-                <h4>2. Drittanbieter-Dienste</h4>
-                <p>Die App verwendet Dienste von Drittanbietern, die Informationen sammeln können (z. B. AdMob).</p>
-                <p>Kontakt: <strong>vakitplus@gmail.com</strong></p>
-            </div>
-        </div>
+            <p><strong>Gültig ab:</strong> 1. Februar 2026</p>
+            <p>Waqt Plus hat die Waqt Plus-App als kostenlose App erstellt.</p>
+        </section>
 
         <!-- Russian -->
-        <div id="ru" class="card">
-            <span class="badge">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</span>
-            <h3>�� Русский - Waqt Plus</h3>
-            <div class="policy-content">
-                <p><strong>Дата вступления في силу:</strong> 1 февраля 2026 г.</p>
-                <p>Waqt Plus разработала приложение Waqt Plus как бесплатное.</p>
-                <h4>1. Сбор и использование информации</h4>
-                <p>Для обеспечения точного времени молитвы и направления Киблы приложению требуется доступ к
-                    местоположению вашего устройства. Эти данные обрабатываются <strong>локально на вашем
-                        устройстве</strong>.</p>
-                <h4>2. Сторонние сервисы</h4>
-                <p>Приложение использует сторонние сервисы, которые могут собирать информацию (например, AdMob).</p>
-                <p>Контакт: <strong>vakitplus@gmail.com</strong></p>
-            </div>
-        </div>
+        <section id="ru" class="card">
+            <span class="badge">Политика конфиденциальности</span>
+            <h3>Русский - Waqt Plus</h3>
+            <p><strong>Дата вступления в силу:</strong> 1 февраля 2026 г.</p>
+        </section>
     </div>
 
     <footer>
         <p>&copy; 2026 Waqt Plus. All rights reserved.</p>
     </footer>
+
+    <a href="#" class="back-to-top">↑</a>
 
 </body>
 
